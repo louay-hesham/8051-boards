@@ -6,7 +6,7 @@
  (resolution mm 100000)
  (unit mm)
  (structure
-  (boundary (rect pcb -44.80560 50.69840 0.10160 110.84560))
+  (boundary (rect pcb -52.72540 50.69840 13.18260 128.37160))
   (flip_style mirror_first)
   (layer TOP (type signal) (direction off))
   (layer I1 (type signal) (direction off))
@@ -52,6 +52,16 @@
   (component XTAL18_X1 (place X1 -40.64000 69.85000 front -270))
   (component AT89C51ED2_8051 (place 8051 -27.94000 101.60000 front 0))
   (component "CONN-SIL10_RN1" (place RN1 -1.27000 66.04000 front -270))
+  (component CAPACITOR_C1 (place C1 -49.53000 68.58000 front 90))
+  (component CAPACITOR_C2 (place C2 -49.53000 76.20000 front 90))
+  (component CAPACITOR_D1 (place D1 -46.99000 85.09000 front -90))
+  (component CAPACITOR_D2 (place D2 0.00000 96.52000 front -90))
+  (component RESISTOR_R1 (place R1 -46.99000 100.33000 front 0))
+  (component RESISTOR_R2 (place R2 6.35000 88.90000 front -180))
+  (component USBMODULE_USB1 (place USB1 -25.40000 118.11000 front 90))
+  (component RESISTOR_R4 (place R4 11.43000 88.90000 front 180))
+  (component TO98_Q1 (place Q1 11.43000 104.14000 front 90))
+  (component RESISTOR_R3 (place R3 3.81000 104.14000 front -90))
  )
  (library
   (image XTAL18_X1 (side front)
@@ -118,6 +128,63 @@
    (pin PS2 (rotate 0) 7 17.78000 0.00000)
    (pin PS2 (rotate 0) 8 20.32000 0.00000)
    (pin PS2 (rotate 0) 9 22.86000 0.00000)
+  )
+  (image CAPACITOR_C1 (side front)
+   (outline (rect TOP -2.94140 -4.21140 2.94140 1.67140))
+   (pin PS1 (rotate 0) 0 0.00000 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 -2.54000)
+  )
+  (image CAPACITOR_C2 (side front)
+   (outline (rect TOP -2.94140 -4.21140 2.94140 1.67140))
+   (pin PS1 (rotate 0) 0 0.00000 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 -2.54000)
+  )
+  (image CAPACITOR_D1 (side front)
+   (outline (rect TOP -2.94140 -4.21140 2.94140 1.67140))
+   (pin PS1 (rotate 0) 0 0.00000 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 -2.54000)
+  )
+  (image CAPACITOR_D2 (side front)
+   (outline (rect TOP -2.94140 -4.21140 2.94140 1.67140))
+   (pin PS1 (rotate 0) 0 0.00000 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 -2.54000)
+  )
+  (image RESISTOR_R1 (side front)
+   (outline (rect TOP -1.37160 -8.99160 1.37160 1.37160))
+   (pin PS1 (rotate 0) 0 0.00000 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 -7.62000)
+  )
+  (image RESISTOR_R2 (side front)
+   (outline (rect TOP -1.37160 -8.99160 1.37160 1.37160))
+   (pin PS1 (rotate 0) 0 0.00000 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 -7.62000)
+  )
+  (image USBMODULE_USB1 (side front)
+   (outline (rect TOP -2.64160 -15.34160 10.26160 2.64160))
+   (pin PS1 (rotate 90) 0 0.00000 -12.70000)
+   (pin PS1 (rotate 90) 1 2.54000 -12.70000)
+   (pin PS1 (rotate 90) 2 5.08000 -12.70000)
+   (pin PS1 (rotate 90) 3 7.62000 -12.70000)
+   (pin PS1 (rotate 90) 4 7.62000 0.00000)
+   (pin PS1 (rotate 90) 5 5.08000 0.00000)
+   (pin PS1 (rotate 90) 6 2.54000 0.00000)
+   (pin PS1 (rotate 90) 7 0.00000 0.00000)
+  )
+  (image RESISTOR_R4 (side front)
+   (outline (rect TOP -1.37160 -8.99160 1.37160 1.37160))
+   (pin PS1 (rotate 0) 0 0.00000 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 -7.62000)
+  )
+  (image TO98_Q1 (side front)
+   (outline (rect TOP -3.53060 -1.75260 3.53060 3.27660))
+   (pin PS1 (rotate 0) 0 -1.90500 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 0.00000)
+   (pin PS1 (rotate 0) 2 1.90500 0.00000)
+  )
+  (image RESISTOR_R3 (side front)
+   (outline (rect TOP -1.37160 -8.99160 1.37160 1.37160))
+   (pin PS1 (rotate 0) 0 0.00000 0.00000)
+   (pin PS1 (rotate 0) 1 0.00000 -7.62000)
   )
   (padstack PS0 (absolute on)
    (shape (circle TOP 2.03200 0 0))
@@ -216,14 +283,28 @@
     (use_layer BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins X1-1 8051-13)
+   (pins X1-1 8051-13 C2-1)
   )
   (net "#00001"
    (circuit
     (use_layer BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins X1-0 8051-14)
+   (pins X1-0 8051-14 C1-1)
+  )
+  (net "#00004"
+   (circuit
+    (use_layer BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins 8051-25 USB1-2)
+  )
+  (net "#00005"
+   (circuit
+    (use_layer BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins 8051-3 R4-1 Q1-0)
   )
   (net "#00006"
    (circuit
@@ -286,35 +367,63 @@
     (use_layer BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins 8051-39)
+   (pins 8051-39 D2-1)
+  )
+  (net "#00022"
+   (circuit
+    (use_layer BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins 8051-4 USB1-4)
+  )
+  (net "#00023"
+   (circuit
+    (use_layer BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins 8051-6 USB1-5)
   )
   (net "#00045"
    (circuit
     (use_layer BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins)
+   (pins D1-0 R1-1)
   )
   (net "#00050"
    (circuit
     (use_layer BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins)
+   (pins D2-0 R2-1)
+  )
+  (net "#00069"
+   (circuit
+    (use_layer BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins USB1-1 R3-1)
+  )
+  (net "#00073"
+   (circuit
+    (use_layer BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins Q1-1 R3-0)
   )
   (net "GND"
    (circuit
     (use_layer BOT)
     (use_via $VIA_POWER)
    )
-   (pins 8051-15)
+   (pins 8051-15 C1-0 C2-0 D1-1 USB1-7 Q1-2)
   )
   (net "VCC/VDD"
    (circuit
     (use_layer BOT)
     (use_via $VIA_POWER)
    )
-   (pins 8051-28 8051-37 RN1-0)
+   (pins 8051-28 8051-37 RN1-1 R1-0 R2-0 USB1-0 R4-0)
   )
   (class POWER
    "GND"
@@ -334,6 +443,8 @@
   (class SIGNAL
    "#00000"
    "#00001"
+   "#00004"
+   "#00005"
    "#00006"
    "#00007"
    "#00008"
@@ -343,8 +454,12 @@
    "#00012"
    "#00013"
    "#00014"
+   "#00022"
+   "#00023"
    "#00045"
    "#00050"
+   "#00069"
+   "#00073"
    "{NC}"
    "{VOID}"
    (rule
@@ -361,11 +476,45 @@
   )
  )
  (wiring
-   (wire (path BOT 0.88900 -10.16000 68.58000 -12.70000 71.12000 -12.70000 88.90000 -10.16000 91.44000
-  ) (net "VCC/VDD") (type protect))
    (wire (path BOT 0.88900 -40.64000 74.93000 -39.37000 73.66000 -27.94000 73.66000)
    (net "#00000") (type protect))
    (wire (path BOT 0.88900 -40.64000 69.85000 -39.37000 71.12000 -27.94000 71.12000)
    (net "#00001") (type protect))
+  (wire (path BOT 0.88900 -10.16000 88.90000 -1.27000 88.90000) (net "#00006"))
+  (wire (path BOT 0.88900 -10.16000 86.36000 -1.27000 86.36000) (net "#00007"))
+  (wire (path BOT 0.88900 -10.16000 83.82000 -1.27000 83.82000) (net "#00008"))
+  (wire (path BOT 0.88900 -10.16000 81.28000 -1.27000 81.28000) (net "#00009"))
+  (wire (path BOT 0.88900 -10.16000 78.74000 -1.27000 78.74000) (net "#00010"))
+  (wire (path BOT 0.88900 -10.16000 76.20000 -1.27000 76.20000) (net "#00011"))
+  (wire (path BOT 0.88900 -10.16000 73.66000 -1.27000 73.66000) (net "#00012"))
+  (wire (path BOT 0.88900 -10.16000 71.12000 -1.27000 71.12000) (net "#00013"))
+   (wire (path BOT 0.88900 -10.16000 68.58000 -12.70000 71.12000 -12.70000 88.90000 -10.16000 91.44000
+  ) (net "VCC/VDD") (type protect))
+   (wire (path BOT 0.88900 -10.16000 68.58000 -1.27000 68.58000) (net "VCC/VDD") (type protect)
+  )
+   (wire (path BOT 0.88900 -40.64000 74.93000 -41.91000 76.20000 -46.99000 76.20000)
+   (net "#00000") (type protect))
+   (wire (path BOT 0.88900 -40.64000 69.85000 -41.91000 68.58000 -46.99000 68.58000)
+   (net "#00001") (type protect))
+   (wire (path BOT 0.88900 -49.53000 68.58000 -49.53000 76.20000) (net "GND") (type protect)
+  )
+   (wire (path BOT 0.88900 -27.94000 68.58000 -29.53070 66.98930 -47.93930 66.98930 -49.53000 68.58000
+  ) (net "GND") (type protect))
+   (wire (path BOT 0.88900 -10.16000 91.44000 1.27000 91.44000 3.81000 88.90000 6.35000 88.90000
+  ) (net "VCC/VDD") (type protect))
+   (wire (path BOT 0.88900 -10.16000 96.52000 -2.54000 96.52000) (net "#00014") (type protect)
+  )
+   (wire (path BOT 0.88900 0.00000 96.52000 6.35000 96.52000) (net "#00050") (type protect)
+  )
+   (wire (path BOT 0.88900 -46.99000 85.09000 -46.99000 92.71000) (net "#00045") (type protect)
+  )
+   (wire (path BOT 0.88900 -49.53000 76.20000 -49.53000 85.09000) (net "GND") (type protect)
+  )
+   (wire (path BOT 0.88900 6.35000 88.90000 11.43000 88.90000) (net "VCC/VDD") (type protect)
+  )
+   (wire (path BOT 0.88900 11.43000 96.52000 11.43000 102.23500) (net "#00005") (type protect)
+  )
+   (wire (path BOT 0.88900 11.43000 104.14000 3.81000 104.14000) (net "#00073") (type protect)
+  )
  )
 )
