@@ -1,0 +1,4 @@
+".\Objects\leds.obj" 
+TO ".\Objects\L2" 
+PRINT(".\Listings\L2.m51") RAMSIZE(256) 
+CODE( 0X0000-0X1FFF )
