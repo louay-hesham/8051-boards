@@ -1,4 +1,4 @@
-C51 COMPILER V9.57.0.0   LEDS                                                              03/11/2018 15:41:54 PAGE 1   
+C51 COMPILER V9.57.0.0   LEDS                                                              03/11/2018 21:24:11 PAGE 1   
 
 
 C51 COMPILER V9.57.0.0, COMPILATION OF MODULE LEDS
@@ -23,39 +23,112 @@ line level    source
   13          
   14          void delay();
   15          unsigned char rot_left(unsigned char LEDs);
-  16          
-  17          void main (void) {
-  18   1        unsigned char LEDs = 0x7F;
-  19   1        while(1) {
-  20   2          delay();
-  21   2          LEDs = rot_left(LEDs);
-  22   2          output = LEDs;
-  23   2        }
-  24   1      }
-  25          
-  26          void delay() {
-  27   1        unsigned char i,j,k;
-  28   1        for (i=7; i>0; i--) {
-  29   2          for (j=255; j>0; j--) {
-  30   3            for (k=255; k>0; k--) {
-  31   4            }
-  32   3          }
-  33   2        }
-  34   1      }
-  35          
-  36          unsigned char rot_left(unsigned char LEDs) {
-  37   1        return (LEDs << 1) | (LEDs >> 7);
-  38   1      }
-  39          
-  40          
+  16          unsigned char rot_right(unsigned char LEDs);
+  17          void left_right (unsigned char LEDs);
+  18          void delay_milli();
+  19          unsigned char position[4] = {0xE7,0xDB,0xBD,0x7E};
+  20          
+  21          void main (void) {
+  22   1      unsigned char LEDs = 0x7F;
+  23   1        
+  24   1        
+  25   1        
+  26   1          //delay();
+  27   1          //LEDs = rot_right(LEDs);
+  28   1          //output = LEDs;
+  29   1        
+  30   1            int i,j,k;
+  31   1        
+  32   1        for ( i=7; i>0; i--) {
+  33   2        LEDs = rot_right(LEDs);
+  34   2          output = LEDs;
+  35   2          delay_milli();
+  36   2        }
+  37   1        for ( j=7; j>0; j--) {
+  38   2        LEDs = rot_left(LEDs);
+  39   2          output = LEDs;
+  40   2          delay_milli();
+  41   2        }
+  42   1      
+  43   1        for ( k=0; k<=3; k++) {
+  44   2        
+  45   2            delay_milli();
+  46   2            LEDs = position[k]; 
+  47   2            output = LEDs;
+  48   2            
+  49   2        }   
+  50   1              for ( k=3; k>=0; k--){
+  51   2        
+  52   2              delay_milli();
+  53   2              LEDs = position[k]; 
+  54   2            output = LEDs;
+C51 COMPILER V9.57.0.0   LEDS                                                              03/11/2018 21:24:11 PAGE 2   
+
+  55   2            
+  56   2        }   
+  57   1      
+  58   1      
+  59   1        }
+  60          
+  61          
+  62          
+  63          void delay() {
+  64   1        unsigned char i,j,k;
+  65   1        for (i=7; i>0; i--) {
+  66   2          for (j=255; j>0; j--) {
+  67   3            for (k=255; k>0; k--) {
+  68   4            }
+  69   3          }
+  70   2        }
+  71   1      }
+  72          
+  73          void delay_milli() {
+  74   1        unsigned char i,j,k;
+  75   1        for (i=3; i>0; i--) {
+  76   2          for (j=255; j>0; j--) {
+  77   3            for (k=255; k>0; k--) {
+  78   4            }
+  79   3          }
+  80   2        }
+  81   1      }
+  82          
+  83          unsigned char rot_left(unsigned char LEDs) {
+  84   1        return (LEDs << 1) | (LEDs >> 7);
+  85   1      }
+  86          
+  87          unsigned char rot_right(unsigned char LEDs) {
+  88   1        return (LEDs >> 1) | (LEDs << 7);
+  89   1      }
+  90          
+  91          
+  92          void left_right (unsigned char LEDs) {
+  93   1        
+  94   1        unsigned char i,j,k;
+  95   1        
+  96   1        for ( i=7; i>0; i--) {
+  97   2        LEDs = rot_right(LEDs);
+  98   2          delay_milli();
+  99   2        }
+ 100   1        for ( j=7; j>0; j--) {
+ 101   2        LEDs = rot_left(LEDs);
+ 102   2          delay_milli();
+ 103   2        }
+ 104   1      for ( k=3; k>0; k--) {
+ 105   2        LEDs = position[k]; 
+ 106   2            delay_milli();
+ 107   2        }   
+ 108   1      
+ 109   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     45    ----
+   CODE SIZE        =    255    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----       1
+C51 COMPILER V9.57.0.0   LEDS                                                              03/11/2018 21:24:11 PAGE 3   
+
+   DATA SIZE        =      4       7
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
