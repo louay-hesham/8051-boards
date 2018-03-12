@@ -16,7 +16,7 @@
     <View>
       <WinId>346</WinId>
       <ViewName>Code Coverage</ViewName>
-      <TableColWidths>761 421</TableColWidths>
+      <TableColWidths>793 389</TableColWidths>
     </View>
     <View>
       <WinId>204</WinId>
@@ -3556,9 +3556,9 @@
       <ActiveTab>0</ActiveTab>
       <Doc>
         <Name>.\leds.c</Name>
-        <ColumnNumber>21</ColumnNumber>
-        <TopLine>13</TopLine>
-        <CurrentLine>33</CurrentLine>
+        <ColumnNumber>20</ColumnNumber>
+        <TopLine>17</TopLine>
+        <CurrentLine>41</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

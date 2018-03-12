@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/12/2018  09:54:29  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/12/2018  10:19:26  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -29,14 +29,15 @@ LINK MAP OF MODULE:  .\Objects\L2 (LEDS)
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
-            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
-            CODE    088CH     0068H     UNIT         ?PR?_LEFT_RIGHT?LEDS
-            CODE    08F4H     0029H     UNIT         ?PR?MAIN?LEDS
-            CODE    091DH     000EH     UNIT         ?PR?_ROT_LEFT?LEDS
-            CODE    092BH     000EH     UNIT         ?PR?_ROT_RIGHT?LEDS
-            CODE    0939H     000DH     UNIT         ?PR?DELAY?LEDS
-            CODE    0946H     000DH     UNIT         ?PR?DELAY_MILLI?LEDS
-            CODE    0953H     000AH     UNIT         ?C_INITSEG
+            CODE    0800H     0094H     UNIT         ?PR?LEFT_RIGHT?LEDS
+            CODE    0894H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0920H     003AH     UNIT         ?PR?MAIN?LEDS
+            CODE    095AH     000EH     UNIT         ?PR?_ROT_LEFT?LEDS
+            CODE    0968H     000EH     UNIT         ?PR?_ROT_RIGHT?LEDS
+            CODE    0976H     000DH     UNIT         ?PR?DELAY_500?LEDS
+            CODE    0983H     000DH     UNIT         ?PR?DELAY_200?LEDS
+            CODE    0990H     000DH     UNIT         ?PR?DELAY_100?LEDS
+            CODE    099DH     000AH     UNIT         ?C_INITSEG
 
 
 
@@ -51,16 +52,24 @@ SEGMENT
   +--> ?C_INITSEG
 
 ?PR?MAIN?LEDS
-  +--> ?PR?DELAY?LEDS
+  +--> ?PR?DELAY_200?LEDS
   +--> ?PR?_ROT_RIGHT?LEDS
   +--> ?PR?_ROT_LEFT?LEDS
+  +--> ?PR?LEFT_RIGHT?LEDS
+  +--> ?PR?DELAY_500?LEDS
+
+?PR?LEFT_RIGHT?LEDS
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  10:19:26  PAGE 2
+
+
+  +--> ?PR?_ROT_LEFT?LEDS
+  +--> ?PR?DELAY_500?LEDS
+  +--> ?PR?_ROT_RIGHT?LEDS
+  +--> ?PR?DELAY_100?LEDS
 
 
 
 SYMBOL TABLE OF MODULE:  .\Objects\L2 (LEDS)
-
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  09:54:29  PAGE 2
-
 
   VALUE           TYPE          NAME
   ----------------------------------
@@ -70,124 +79,148 @@ SYMBOL TABLE OF MODULE:  .\Objects\L2 (LEDS)
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
-  C:0946H         PUBLIC        delay_milli
+  C:0990H         PUBLIC        delay_100
+  C:0983H         PUBLIC        delay_200
+  C:0976H         PUBLIC        delay_500
   D:00A8H         PUBLIC        IE
-  C:0939H         PUBLIC        delay
   D:00B8H         PUBLIC        IP
-  C:08F4H         PUBLIC        main
-  C:088CH         PUBLIC        _left_right
+  C:0920H         PUBLIC        main
+  C:0800H         PUBLIC        left_right
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   D:0008H         PUBLIC        LEDs
-  C:092BH         PUBLIC        _rot_right
-  C:091DH         PUBLIC        _rot_left
+  B:00B0H.5       PUBLIC        fara7_3omda_sw
+  C:0968H         PUBLIC        _rot_right
+  C:095AH         PUBLIC        _rot_left
   D:00C8H         PUBLIC        T2CON
   B:00B0H.7       PUBLIC        right_sw
   B:00B0H.6       PUBLIC        left_sw
   D:0009H         PUBLIC        position
   D:00D0H         PUBLIC        PSW
   -------         PROC          MAIN
-  C:08F4H         LINE#         23
-  C:08F4H         LINE#         24
-  C:08F7H         LINE#         25
-  C:08F9H         LINE#         26
-  C:08F9H         LINE#         27
-  C:08FCH         LINE#         28
-  C:08FFH         LINE#         29
-  C:0906H         LINE#         30
-  C:0909H         LINE#         31
-  C:090EH         LINE#         32
-  C:0911H         LINE#         33
-  C:0918H         LINE#         34
-  C:091BH         LINE#         35
-  C:091BH         LINE#         36
+  C:0920H         LINE#         24
+  C:0920H         LINE#         25
+  C:0923H         LINE#         26
+  C:0925H         LINE#         27
+  C:0925H         LINE#         28
+  C:0928H         LINE#         29
+  C:092BH         LINE#         30
+  C:0932H         LINE#         31
+  C:0932H         LINE#         32
+  C:0937H         LINE#         33
+  C:093AH         LINE#         34
+  C:0941H         LINE#         35
+  C:0944H         LINE#         36
+  C:0949H         LINE#         37
+  C:094CH         LINE#         38
+  C:094FH         LINE#         39
+  C:0952H         LINE#         40
+  C:0955H         LINE#         41
+  C:0958H         LINE#         42
+  C:0958H         LINE#         43
   -------         ENDPROC       MAIN
-  -------         PROC          DELAY
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  10:19:26  PAGE 3
+
+
+  -------         PROC          DELAY_500
   -------         DO            
   D:0007H         SYMBOL        i
   D:0006H         SYMBOL        j
   D:0005H         SYMBOL        k
   -------         ENDDO         
-  C:0939H         LINE#         41
-  C:0939H         LINE#         43
-  C:093BH         LINE#         44
-  C:093DH         LINE#         45
-  C:093FH         LINE#         46
-  C:0941H         LINE#         47
-  C:0943H         LINE#         48
-  C:0945H         LINE#         49
-  -------         ENDPROC       DELAY
-  -------         PROC          DELAY_MILLI
+  C:0976H         LINE#         48
+  C:0976H         LINE#         50
+  C:0978H         LINE#         51
+  C:097AH         LINE#         52
+  C:097CH         LINE#         53
+  C:097EH         LINE#         54
+  C:0980H         LINE#         55
+  C:0982H         LINE#         56
+  -------         ENDPROC       DELAY_500
+  -------         PROC          DELAY_200
   -------         DO            
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  09:54:29  PAGE 3
-
-
   D:0007H         SYMBOL        i
   D:0006H         SYMBOL        j
   D:0005H         SYMBOL        k
   -------         ENDDO         
-  C:0946H         LINE#         51
-  C:0946H         LINE#         53
-  C:0948H         LINE#         54
-  C:094AH         LINE#         55
-  C:094CH         LINE#         56
-  C:094EH         LINE#         57
-  C:0950H         LINE#         58
-  C:0952H         LINE#         59
-  -------         ENDPROC       DELAY_MILLI
+  C:0983H         LINE#         58
+  C:0983H         LINE#         60
+  C:0985H         LINE#         61
+  C:0987H         LINE#         62
+  C:0989H         LINE#         63
+  C:098BH         LINE#         64
+  C:098DH         LINE#         65
+  C:098FH         LINE#         66
+  -------         ENDPROC       DELAY_200
+  -------         PROC          DELAY_100
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  D:0005H         SYMBOL        k
+  -------         ENDDO         
+  C:0990H         LINE#         68
+  C:0990H         LINE#         70
+  C:0992H         LINE#         71
+  C:0994H         LINE#         72
+  C:0996H         LINE#         73
+  C:0998H         LINE#         74
+  C:099AH         LINE#         75
+  C:099CH         LINE#         76
+  -------         ENDPROC       DELAY_100
   -------         PROC          _ROT_LEFT
   D:0007H         SYMBOL        LEDs
-  C:091DH         LINE#         61
-  C:091DH         LINE#         62
-  C:092AH         LINE#         63
+  C:095AH         LINE#         78
+  C:095AH         LINE#         79
+  C:0967H         LINE#         80
   -------         ENDPROC       _ROT_LEFT
   -------         PROC          _ROT_RIGHT
   D:0007H         SYMBOL        LEDs
-  C:092BH         LINE#         65
-  C:092BH         LINE#         66
-  C:0938H         LINE#         67
+  C:0968H         LINE#         82
+  C:0968H         LINE#         83
+  C:0975H         LINE#         84
   -------         ENDPROC       _ROT_RIGHT
-  -------         PROC          _LEFT_RIGHT
-  D:0004H         SYMBOL        LEDs
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  10:19:26  PAGE 4
+
+
+  -------         PROC          LEFT_RIGHT
   -------         DO            
   D:0002H         SYMBOL        i
-  D:0002H         SYMBOL        j
-  D:0002H         SYMBOL        k
+  D:0082H         SYMBOL        j
   -------         ENDDO         
-  C:088CH         LINE#         70
-  C:088EH         LINE#         74
-  C:0892H         LINE#         75
-  C:0899H         LINE#         76
-  C:089BH         LINE#         77
-  C:089EH         LINE#         78
-  C:08A7H         LINE#         79
-  C:08ABH         LINE#         80
-  C:08B2H         LINE#         81
-  C:08B4H         LINE#         82
-  C:08B7H         LINE#         83
-  C:08C0H         LINE#         85
-  C:08C3H         LINE#         87
-  C:08C6H         LINE#         88
-  C:08CCH         LINE#         89
-  C:08CEH         LINE#         91
-  C:08D9H         LINE#         92
-  C:08DDH         LINE#         94
-  C:08E0H         LINE#         95
-  C:08E6H         LINE#         96
-  C:08E8H         LINE#         98
-  C:08F3H         LINE#         101
-  -------         ENDPROC       _LEFT_RIGHT
+  C:0800H         LINE#         87
+  C:0800H         LINE#         90
+  C:0803H         LINE#         91
+  C:0806H         LINE#         92
+  C:0809H         LINE#         93
+  C:080DH         LINE#         94
+  C:0814H         LINE#         95
+  C:0817H         LINE#         96
+  C:081AH         LINE#         97
+  C:0823H         LINE#         98
+  C:0827H         LINE#         99
+  C:082EH         LINE#         100
+  C:0831H         LINE#         101
+  C:0834H         LINE#         102
+  C:083DH         LINE#         103
+  C:084BH         LINE#         105
+  C:084EH         LINE#         106
+  C:0852H         LINE#         107
+  C:0855H         LINE#         108
+  C:085FH         LINE#         109
+  C:0861H         LINE#         110
+  C:086AH         LINE#         111
+  C:086EH         LINE#         112
+  C:0871H         LINE#         113
+  C:0878H         LINE#         114
+  C:087AH         LINE#         115
+  C:0885H         LINE#         116
+  C:0893H         LINE#         117
+  -------         ENDPROC       LEFT_RIGHT
   -------         ENDMOD        LEDS
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  09:54:29  PAGE 4
-
-
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_LEFT_RIGHT?LEDS
-
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00D0H BYTE (10%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 011AH BYTE (13%) *
 ******************************************************************************
 
-Program Size: data=14.0 xdata=0 code=352
-LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
+Program Size: data=14.0 xdata=0 code=426
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
