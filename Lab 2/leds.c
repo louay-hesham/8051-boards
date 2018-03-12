@@ -6,9 +6,6 @@
 
 
 #define input P3
-#define left_sw P3^5
-#define fara7_3omda_sw P3^6
-#define right_sw P3^7
 #define output P2
 
 void delay();
@@ -16,20 +13,28 @@ unsigned char rot_left(unsigned char LEDs);
 unsigned char rot_right(unsigned char LEDs);
 void left_right (unsigned char LEDs);
 void delay_milli();
+
 unsigned char position[4] = {0xE7,0xDB,0xBD,0x7E};
+unsigned char LEDs = 0x7F;
+sbit right_sw = P3^7;
+sbit left_sw = P3^6;
+sbit fara7_3omda_sw = P3^5;
 
 void main (void) {
-unsigned char LEDs = 0x7F;
-	
-	
-	
-		//delay();
-		//LEDs = rot_right(LEDs);
-		//output = LEDs;
-	
-			
-
-	}
+	input = 0xFF;
+	output = LEDs;
+	while (1) {
+		if (!right_sw) {
+			delay();
+			LEDs = rot_right(LEDs);
+			output = LEDs;
+		} else if (!left_sw) {
+			delay();
+			LEDs = rot_left(LEDs);
+			output = LEDs;
+		}
+	}	
+}
 
 
 
