@@ -10,7 +10,7 @@
 
 void delay_500();
 void delay_200();
-void delay_100();
+void delay_1000();
 unsigned char rot_left(unsigned char LEDs);
 unsigned char rot_right(unsigned char LEDs);
 void left_right ();
@@ -19,7 +19,7 @@ unsigned char position[4] = {0xE7,0xDB,0xBD,0x7E};
 unsigned char LEDs = 0x7F;
 sbit right_sw = P3^7;
 sbit left_sw = P3^6;
-sbit fara7_3omda_sw = P3^5;
+sbit left_right_sw = P3^5;
 
 void main (void) {
 	input = 0xFF;
@@ -28,18 +28,16 @@ void main (void) {
 		if (!right_sw) {
 			delay_200();
 			LEDs = rot_right(LEDs);
-			output = LEDs;
 		} else if (!left_sw) {
 			delay_200();
 			LEDs = rot_left(LEDs);
-			output = LEDs;
-		} else if (!fara7_3omda_sw) {
+		} else if (!left_right_sw) {
 			delay_200();
 			left_right();
 			delay_500();
 			LEDs = 0x7F;
-			output = LEDs;
 		}
+		output = LEDs;
 	}	
 }
 
@@ -65,10 +63,10 @@ void delay_200() {
 	}
 }
 
-void delay_100() {
+void delay_1000() {
 	unsigned char i,j,k;
-	for (i=3; i>0; i--) {
-		for (j=128; j>0; j--) {
+	for (i=14; i>0; i--) {
+		for (j=255; j>0; j--) {
 			for (k=255; k>0; k--) {
 			}
 		}
@@ -104,12 +102,12 @@ void left_right () {
 
 	for ( j=2; j>0; j--) {
 		for ( i=4; i>0; i--) {
-			delay_100();
+			delay_1000();
 			LEDs = position[4-i];	
 			output = LEDs;
 		}		
 		for ( i=3; i>=0; i--){
-			delay_100();
+			delay_1000();
 			LEDs = position[i];	
 			output = LEDs;
 		}		

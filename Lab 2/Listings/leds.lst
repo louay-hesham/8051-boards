@@ -1,4 +1,4 @@
-C51 COMPILER V9.57.0.0   LEDS                                                              03/12/2018 10:19:25 PAGE 1   
+C51 COMPILER V9.57.0.0   LEDS                                                              03/13/2018 20:27:18 PAGE 1   
 
 
 C51 COMPILER V9.57.0.0, COMPILATION OF MODULE LEDS
@@ -20,7 +20,7 @@ line level    source
   10          
   11          void delay_500();
   12          void delay_200();
-  13          void delay_100();
+  13          void delay_1000();
   14          unsigned char rot_left(unsigned char LEDs);
   15          unsigned char rot_right(unsigned char LEDs);
   16          void left_right ();
@@ -29,7 +29,7 @@ line level    source
   19          unsigned char LEDs = 0x7F;
   20          sbit right_sw = P3^7;
   21          sbit left_sw = P3^6;
-  22          sbit fara7_3omda_sw = P3^5;
+  22          sbit left_right_sw = P3^5;
   23          
   24          void main (void) {
   25   1        input = 0xFF;
@@ -38,101 +38,99 @@ line level    source
   28   2          if (!right_sw) {
   29   3            delay_200();
   30   3            LEDs = rot_right(LEDs);
-  31   3            output = LEDs;
-  32   3          } else if (!left_sw) {
-  33   3            delay_200();
-  34   3            LEDs = rot_left(LEDs);
-  35   3            output = LEDs;
-  36   3          } else if (!fara7_3omda_sw) {
-  37   3            delay_200();
-  38   3            left_right();
-  39   3            delay_500();
-  40   3            LEDs = 0x7F;
-  41   3            output = LEDs;
-  42   3          }
-  43   2        } 
-  44   1      }
+  31   3          } else if (!left_sw) {
+  32   3            delay_200();
+  33   3            LEDs = rot_left(LEDs);
+  34   3          } else if (!left_right_sw) {
+  35   3            delay_200();
+  36   3            left_right();
+  37   3            delay_500();
+  38   3            LEDs = 0x7F;
+  39   3          }
+  40   2          output = LEDs;
+  41   2        } 
+  42   1      }
+  43          
+  44          
   45          
-  46          
-  47          
-  48          void delay_500() {
-  49   1        unsigned char i,j,k;
-  50   1        for (i=7; i>0; i--) {
-  51   2          for (j=255; j>0; j--) {
-  52   3            for (k=255; k>0; k--) {
-  53   4            }
-  54   3          }
-C51 COMPILER V9.57.0.0   LEDS                                                              03/12/2018 10:19:25 PAGE 2   
+  46          void delay_500() {
+  47   1        unsigned char i,j,k;
+  48   1        for (i=7; i>0; i--) {
+  49   2          for (j=255; j>0; j--) {
+  50   3            for (k=255; k>0; k--) {
+  51   4            }
+  52   3          }
+  53   2        }
+  54   1      }
+C51 COMPILER V9.57.0.0   LEDS                                                              03/13/2018 20:27:18 PAGE 2   
 
-  55   2        }
-  56   1      }
-  57          
-  58          void delay_200() {
-  59   1        unsigned char i,j,k;
-  60   1        for (i=3; i>0; i--) {
-  61   2          for (j=255; j>0; j--) {
-  62   3            for (k=255; k>0; k--) {
-  63   4            }
-  64   3          }
-  65   2        }
-  66   1      }
-  67          
-  68          void delay_100() {
-  69   1        unsigned char i,j,k;
-  70   1        for (i=3; i>0; i--) {
-  71   2          for (j=128; j>0; j--) {
-  72   3            for (k=255; k>0; k--) {
-  73   4            }
-  74   3          }
-  75   2        }
-  76   1      }
-  77          
-  78          unsigned char rot_left(unsigned char LEDs) {
-  79   1        return (LEDs << 1) | (LEDs >> 7);
-  80   1      }
-  81          
-  82          unsigned char rot_right(unsigned char LEDs) {
-  83   1        return (LEDs >> 1) | (LEDs << 7);
-  84   1      }
-  85          
-  86          
-  87          void left_right () {
-  88   1        
-  89   1        int i,j;
-  90   1        LEDs = 0xFE;
-  91   1        output = LEDs;
-  92   1        for ( j=2; j>0; j--) {
-  93   2          for ( i=7; i>0; i--) {
-  94   3            LEDs = rot_left(LEDs);
-  95   3            output = LEDs;
-  96   3            delay_500();
-  97   3          }
-  98   2          for ( i=7; i>0; i--) {
-  99   3            LEDs = rot_right(LEDs);
- 100   3            output = LEDs;
- 101   3            delay_500();
- 102   3          }
- 103   2        }
- 104   1      
- 105   1        for ( j=2; j>0; j--) {
- 106   2          for ( i=4; i>0; i--) {
- 107   3            delay_100();
- 108   3            LEDs = position[4-i]; 
- 109   3            output = LEDs;
- 110   3          }   
- 111   2          for ( i=3; i>=0; i--){
- 112   3            delay_100();
- 113   3            LEDs = position[i]; 
- 114   3            output = LEDs;
- 115   3          }   
- 116   2        }
-C51 COMPILER V9.57.0.0   LEDS                                                              03/12/2018 10:19:25 PAGE 3   
+  55          
+  56          void delay_200() {
+  57   1        unsigned char i,j,k;
+  58   1        for (i=3; i>0; i--) {
+  59   2          for (j=255; j>0; j--) {
+  60   3            for (k=255; k>0; k--) {
+  61   4            }
+  62   3          }
+  63   2        }
+  64   1      }
+  65          
+  66          void delay_1000() {
+  67   1        unsigned char i,j,k;
+  68   1        for (i=14; i>0; i--) {
+  69   2          for (j=255; j>0; j--) {
+  70   3            for (k=255; k>0; k--) {
+  71   4            }
+  72   3          }
+  73   2        }
+  74   1      }
+  75          
+  76          unsigned char rot_left(unsigned char LEDs) {
+  77   1        return (LEDs << 1) | (LEDs >> 7);
+  78   1      }
+  79          
+  80          unsigned char rot_right(unsigned char LEDs) {
+  81   1        return (LEDs >> 1) | (LEDs << 7);
+  82   1      }
+  83          
+  84          
+  85          void left_right () {
+  86   1        
+  87   1        int i,j;
+  88   1        LEDs = 0xFE;
+  89   1        output = LEDs;
+  90   1        for ( j=2; j>0; j--) {
+  91   2          for ( i=7; i>0; i--) {
+  92   3            LEDs = rot_left(LEDs);
+  93   3            output = LEDs;
+  94   3            delay_500();
+  95   3          }
+  96   2          for ( i=7; i>0; i--) {
+  97   3            LEDs = rot_right(LEDs);
+  98   3            output = LEDs;
+  99   3            delay_500();
+ 100   3          }
+ 101   2        }
+ 102   1      
+ 103   1        for ( j=2; j>0; j--) {
+ 104   2          for ( i=4; i>0; i--) {
+ 105   3            delay_1000();
+ 106   3            LEDs = position[4-i]; 
+ 107   3            output = LEDs;
+ 108   3          }   
+ 109   2          for ( i=3; i>=0; i--){
+ 110   3            delay_1000();
+ 111   3            LEDs = position[i]; 
+ 112   3            output = LEDs;
+ 113   3          }   
+ 114   2        }
+ 115   1      }
 
- 117   1      }
+C51 COMPILER V9.57.0.0   LEDS                                                              03/13/2018 20:27:18 PAGE 3   
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    273    ----
+   CODE SIZE        =    271    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
