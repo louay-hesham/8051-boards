@@ -6,7 +6,7 @@
  (resolution mm 100000)
  (unit mm)
  (structure
-  (boundary (rect pcb 17.01800 -63.85560 44.57700 -21.48840))
+  (boundary (rect pcb 0.76200 -65.25260 25.90800 -22.88540))
   (flip_style mirror_first)
   (layer TOP (type signal) (direction off))
   (layer I1 (type signal) (direction off))
@@ -49,7 +49,7 @@
   )
  )
  (placement
-  (component "UM61512AK-15_UM1" (place UM1 36.32200 -44.70400 front 0))
+  (component "UM61512AK-15_UM1" (place UM1 1.39700 -46.10100 front 0))
   (component DIL20_U1 (place U1 17.65300 -33.40100 front 270))
  )
  (library
