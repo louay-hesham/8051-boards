@@ -1,0 +1,602 @@
+ (routes 
+  (resolution mm 100000)
+  (parser
+  )
+  (parser
+  )
+  (structure_out
+   (layer TOP (type signal)
+   )
+   (layer I1 (type signal)
+   )
+   (layer I2 (type signal)
+   )
+   (layer I3 (type signal)
+   )
+   (layer I4 (type signal)
+   )
+   (layer I5 (type signal)
+   )
+   (layer I6 (type signal)
+   )
+   (layer I7 (type signal)
+   )
+   (layer I8 (type signal)
+   )
+   (layer I9 (type signal)
+   )
+   (layer I10 (type signal)
+   )
+   (layer I11 (type signal)
+   )
+   (layer I12 (type signal)
+   )
+   (layer I13 (type signal)
+   )
+   (layer I14 (type signal)
+   )
+   (layer BOT (type signal)
+   )
+  )
+  (library_out
+  (padstack $VIA_POWER
+   (shape (circ TOP 76200 0 0))
+   (shape (circ I1 76200 0 0))
+   (shape (circ I2 76200 0 0))
+   (shape (circ I3 76200 0 0))
+   (shape (circ I4 76200 0 0))
+   (shape (circ I5 76200 0 0))
+   (shape (circ I6 76200 0 0))
+   (shape (circ I7 76200 0 0))
+   (shape (circ I8 76200 0 0))
+   (shape (circ I9 76200 0 0))
+   (shape (circ I10 76200 0 0))
+   (shape (circ I11 76200 0 0))
+   (shape (circ I12 76200 0 0))
+   (shape (circ I13 76200 0 0))
+   (shape (circ I14 76200 0 0))
+   (shape (circ BOT 76200 0 0))
+  )
+  (padstack $VIA_SIGNAL
+   (shape (circ TOP 76200 0 0))
+   (shape (circ I1 76200 0 0))
+   (shape (circ I2 76200 0 0))
+   (shape (circ I3 76200 0 0))
+   (shape (circ I4 76200 0 0))
+   (shape (circ I5 76200 0 0))
+   (shape (circ I6 76200 0 0))
+   (shape (circ I7 76200 0 0))
+   (shape (circ I8 76200 0 0))
+   (shape (circ I9 76200 0 0))
+   (shape (circ I10 76200 0 0))
+   (shape (circ I11 76200 0 0))
+   (shape (circ I12 76200 0 0))
+   (shape (circ I13 76200 0 0))
+   (shape (circ I14 76200 0 0))
+   (shape (circ BOT 76200 0 0))
+  )
+  )
+  (network_out
+   (Net #00000 
+   (rule
+   )
+   (wire (path BOT 88900  -7157000 6386000 -7804484 6386000 -7804484 6527400
+     -8200000 6527400)
+    (connect (terminal pin X1-1) (terminal pin ATS1-13))
+   )
+   (wire (path BOT 88900  -9260000 6520000 -8826500 6520000 -8826500 6527400
+     -8200000 6527400)
+    (connect (terminal pin 8051-13) (terminal pin ATS1-13))
+   )
+   (wire (path BOT 88900  -7157000 6386000 -7030000 6259000 -6522000 6259000)
+    (connect (terminal pin X1-1) (terminal pin C2-1))
+    (type protect)
+   )
+   )
+   (Net #00001 
+   (rule
+   )
+   (wire (path BOT 88900  -7157000 6894000 -7493000 6894000 -7493000 6781400
+     -8200000 6781400)
+    (connect (terminal pin X1-0) (terminal pin ATS1-14))
+   )
+   (wire (path BOT 88900  -9260000 6774000 -8826500 6774000 -8826500 6781400
+     -8200000 6781400)
+    (connect (terminal pin 8051-14) (terminal pin ATS1-14))
+   )
+   (wire (path BOT 88900  -7157000 6894000 -7030000 7021000 -6522000 7021000)
+    (connect (terminal pin X1-0) (terminal pin C1-1))
+    (type protect)
+   )
+   )
+   (Net #00002 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 7536000 -11045400 7543400 -12010000 7543400)
+    (connect (terminal pin 8051-26) (terminal pin ATS1-26))
+    (type protect)
+   )
+   )
+   (Net #00003 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 7028000 -11045400 7035400 -12010000 7035400)
+    (connect (terminal pin 8051-28) (terminal pin ATS1-28))
+    (type protect)
+   )
+   )
+   (Net #00004 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 7790000 -11030600 7797400)
+    (connect (terminal pin 8051-25) (terminal wire))
+    (type protect)
+   )
+   (wire (path BOT 88900  -11030600 7797400 -11026900 7801100)
+    (connect (terminal wire) (terminal wire))
+    (type protect)
+   )
+   (wire (path BOT 88900  -11026900 7801100 -10435500 8392500 -10435500 9628000)
+    (connect (terminal wire) (terminal pin USB1-2))
+    (type protect)
+   )
+   (wire (path BOT 88900  -11038000 7790000 -11026900 7801100 -11030600 7797400)
+    (connect (terminal pin 8051-25) (terminal wire))
+    (type protect)
+   )
+   (wire (path BOT 88900  -11030600 7797400 -12010000 7797400)
+    (connect (terminal wire) (terminal pin ATS1-25))
+    (type protect)
+   )
+   )
+   (Net #00005 
+   (rule
+   )
+   (wire (path BOT 88900  -8200000 3987400 -7747000 3987400 -7747000 3946000
+     -7194000 3946000)
+    (connect (terminal pin ATS1-3) (terminal pin R4-1))
+   )
+   (wire (path BOT 88900  -9260000 3980000 -8826500 3980000 -8826500 3987400
+     -8200000 3987400)
+    (connect (terminal pin 8051-3) (terminal pin ATS1-3))
+   )
+   (wire (path BOT 88900  -7194000 3946000 -7170000 3970000)
+    (connect (terminal pin R4-1) (terminal wire))
+    (type protect)
+   )
+   (wire (path BOT 88900  -7170000 3970000 -6791700 4348300 -5653200 4348300)
+    (connect (terminal wire) (terminal pin SW1-1))
+    (type protect)
+   )
+   (wire (path BOT 88900  -5653200 4348300 -5231500 4770000 -5231500 5256000)
+    (connect (terminal pin SW1-1) (terminal pin Q1-2))
+    (type protect)
+   )
+   )
+   (Net #00006 
+   (rule
+   )
+   (wire (path BOT 88900  -12010000 5003400 -13316600 5003400 -13324000 4996000)
+    (connect (terminal pin ATS1-36) (terminal pin RN1-9))
+    (type protect)
+   )
+   (wire (path BOT 88900  -11038000 4996000 -12002600 4996000 -12010000 5003400)
+    (connect (terminal pin 8051-36) (terminal pin ATS1-36))
+    (type protect)
+   )
+   )
+   (Net #00007 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 5250000 -11045400 5257400 -12010000 5257400)
+    (connect (terminal pin 8051-35) (terminal pin ATS1-35))
+    (type protect)
+   )
+   (wire (path BOT 88900  -12010000 5257400 -12017400 5250000 -13324000 5250000)
+    (connect (terminal pin ATS1-35) (terminal pin RN1-8))
+    (type protect)
+   )
+   )
+   (Net #00008 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 5504000 -12002600 5504000 -12010000 5511400)
+    (connect (terminal pin 8051-34) (terminal pin ATS1-34))
+    (type protect)
+   )
+   (wire (path BOT 88900  -12010000 5511400 -12017400 5504000 -13324000 5504000)
+    (connect (terminal pin ATS1-34) (terminal pin RN1-7))
+    (type protect)
+   )
+   )
+   (Net #00009 
+   (rule
+   )
+   (wire (path BOT 88900  -12010000 5765400 -13316600 5765400 -13324000 5758000)
+    (connect (terminal pin ATS1-33) (terminal pin RN1-6))
+    (type protect)
+   )
+   (wire (path BOT 88900  -11038000 5758000 -12002600 5758000 -12010000 5765400)
+    (connect (terminal pin 8051-33) (terminal pin ATS1-33))
+    (type protect)
+   )
+   )
+   (Net #00010 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 6012000 -11045400 6019400 -12010000 6019400)
+    (connect (terminal pin 8051-32) (terminal pin ATS1-32))
+    (type protect)
+   )
+   (wire (path BOT 88900  -12010000 6019400 -12017400 6012000 -13324000 6012000)
+    (connect (terminal pin ATS1-32) (terminal pin RN1-5))
+    (type protect)
+   )
+   )
+   (Net #00011 
+   (rule
+   )
+   (wire (path BOT 88900  -12010000 6273400 -13316600 6273400 -13324000 6266000)
+    (connect (terminal pin ATS1-31) (terminal pin RN1-4))
+    (type protect)
+   )
+   (wire (path BOT 88900  -11038000 6266000 -12002600 6266000 -12010000 6273400)
+    (connect (terminal pin 8051-31) (terminal pin ATS1-31))
+    (type protect)
+   )
+   )
+   (Net #00012 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 6520000 -11045400 6527400 -12010000 6527400)
+    (connect (terminal pin 8051-30) (terminal pin ATS1-30))
+    (type protect)
+   )
+   (wire (path BOT 88900  -12010000 6527400 -12017400 6520000 -13324000 6520000)
+    (connect (terminal pin ATS1-30) (terminal pin RN1-3))
+    (type protect)
+   )
+   )
+   (Net #00013 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 6774000 -11045400 6781400 -12010000 6781400)
+    (connect (terminal pin 8051-29) (terminal pin ATS1-29))
+    (type protect)
+   )
+   (wire (path BOT 88900  -12010000 6781400 -12017400 6774000 -13324000 6774000)
+    (connect (terminal pin ATS1-29) (terminal pin RN1-2))
+    (type protect)
+   )
+   )
+   (Net #00014 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 4234000 -11493500 4234000 -11493500 4241399
+     -12010000 4241399)
+    (connect (terminal pin 8051-39) (terminal pin ATS1-39))
+   )
+   )
+   (Net #00015 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 3980000 -11493500 3980000 -11493500 3987399
+     -12010000 3987399)
+    (connect (terminal pin 8051-40) (terminal pin ATS1-40))
+   )
+   )
+   (Net #00016 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 3726000 -11493500 3726000 -11493500 3733399
+     -12010000 3733399)
+    (connect (terminal pin 8051-41) (terminal pin ATS1-41))
+   )
+   )
+   (Net #00017 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 3472000 -11493500 3472000 -11493500 3479399
+     -12010000 3479399)
+    (connect (terminal pin 8051-42) (terminal pin ATS1-42))
+   )
+   )
+   (Net #00018 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 3218000 -11493500 3218000 -11493500 3225400
+     -12010000 3225400)
+    (connect (terminal pin 8051-43) (terminal pin ATS1-43))
+   )
+   )
+   (Net #00019 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 3218000 -8826500 3218000 -8826500 3225400
+     -8200000 3225400)
+    (connect (terminal pin 8051-0) (terminal pin ATS1-0))
+   )
+   )
+   (Net #00020 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 3472000 -8826500 3472000 -8826500 3479400
+     -8200000 3479400)
+    (connect (terminal pin 8051-1) (terminal pin ATS1-1))
+   )
+   )
+   (Net #00021 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 3726000 -9260000 3733400 -8200000 3733400)
+    (connect (terminal pin 8051-2) (terminal pin ATS1-2))
+   )
+   )
+   (Net #00022 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 4234000 -8826500 4234000 -8826500 4241400
+     -8200000 4241400)
+    (connect (terminal pin 8051-4) (terminal pin ATS1-4))
+   )
+   (wire (path BOT 88900  -9260000 4234000 -9660000 4234000 -9900000 4474000
+     -9900000 11124500 -10181500 11406000)
+    (connect (terminal pin 8051-4) (terminal pin USB1-4))
+    (type protect)
+   )
+   )
+   (Net #00023 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 4742000 -8826500 4742000 -8826500 4749400
+     -8200000 4749400)
+    (connect (terminal pin 8051-6) (terminal pin ATS1-6))
+   )
+   (wire (path BOT 88900  -9260000 4742000 -9492000 4742000 -9650000 4900000
+     -9650000 11350000 -9900000 11600000 -10241500 11600000 -10435500 11406000)
+    (connect (terminal pin 8051-6) (terminal pin USB1-5))
+    (type protect)
+   )
+   )
+   (Net #00024 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 4996000 -8826500 4996000 -8826500 5003400
+     -8200000 5003400)
+    (connect (terminal pin 8051-7) (terminal pin ATS1-7))
+   )
+   )
+   (Net #00025 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 5250000 -9260000 5257400 -8200000 5257400)
+    (connect (terminal pin 8051-8) (terminal pin ATS1-8))
+   )
+   )
+   (Net #00026 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 5504000 -8826500 5504000 -8826500 5511400
+     -8200000 5511400)
+    (connect (terminal pin 8051-9) (terminal pin ATS1-9))
+   )
+   )
+   (Net #00027 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 6266000 -9260000 6273400 -8200000 6273400)
+    (connect (terminal pin 8051-12) (terminal pin ATS1-12))
+   )
+   )
+   (Net #00028 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 6012000 -8826500 6012000 -8826500 6019400
+     -8200000 6019400)
+    (connect (terminal pin 8051-11) (terminal pin ATS1-11))
+   )
+   )
+   (Net #00029 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 5758000 -9260000 5765400 -8200000 5765400)
+    (connect (terminal pin 8051-10) (terminal pin ATS1-10))
+   )
+   )
+   (Net #00032 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 8044000 -11045400 8051400 -12010000 8051400)
+    (connect (terminal pin 8051-24) (terminal pin ATS1-24))
+    (type protect)
+   )
+   )
+   (Net #00033 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 7536000 -8826500 7536000 -8826500 7543400
+     -8200000 7543400)
+    (connect (terminal pin 8051-17) (terminal pin ATS1-17))
+   )
+   )
+   (Net #00034 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 7790000 -9260000 7797400 -8200000 7797400)
+    (connect (terminal pin 8051-18) (terminal pin ATS1-18))
+   )
+   )
+   (Net #00035 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 8044000 -9260000 8051400 -8200000 8051400)
+    (connect (terminal pin 8051-19) (terminal pin ATS1-19))
+   )
+   )
+   (Net #00036 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 8298000 -8826500 8298000 -8826500 8305400
+     -8200000 8305400)
+    (connect (terminal pin 8051-20) (terminal pin ATS1-20))
+   )
+   )
+   (Net #00037 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 8552000 -8826500 8552000 -8826500 8559400
+     -8200000 8559400)
+    (connect (terminal pin 8051-21) (terminal pin ATS1-21))
+   )
+   )
+   (Net #00038 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 8552000 -11045400 8559400 -12010000 8559400)
+    (connect (terminal pin 8051-22) (terminal pin ATS1-22))
+    (type protect)
+   )
+   )
+   (Net #00039 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 8298000 -11045400 8305400 -12010000 8305400)
+    (connect (terminal pin 8051-23) (terminal pin ATS1-23))
+    (type protect)
+   )
+   )
+   (Net #00040 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 4488000 -8826500 4488000 -8826500 4495400
+     -8200000 4495400)
+    (connect (terminal pin 8051-5) (terminal pin ATS1-5))
+   )
+   )
+   (Net #00041 
+   (rule
+   )
+   (wire (path BOT 88900  -9260000 7282000 -8826500 7282000 -8826500 7289400
+     -8200000 7289400)
+    (connect (terminal pin 8051-16) (terminal pin ATS1-16))
+   )
+   )
+   (Net #00042 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 7282000 -11045400 7289400 -12010000 7289400)
+    (connect (terminal pin 8051-27) (terminal pin ATS1-27))
+    (type protect)
+   )
+   )
+   (Net #00043 
+   (rule
+   )
+   (wire (path BOT 88900  -11038000 4488000 -11493500 4488000 -11493500 4495399
+     -12010000 4495399)
+    (connect (terminal pin 8051-38) (terminal pin ATS1-38))
+   )
+   )
+   (Net #00045 
+   (rule
+   )
+   (wire (path BOT 88900  -6522000 5370000 -6522000 4608000)
+    (connect (terminal pin D1-0) (terminal pin R1-1))
+    (type protect)
+   )
+   )
+   (Net #00052 
+   (rule
+   )
+   (wire (path BOT 88900  -5422000 6980000 -5422000 8122000 -9300000 12000000
+     -10900000 12000000 -11300000 11600000 -11300000 11000000 -10689500 10389500
+     -10689500 9628000)
+    (connect (terminal pin R3-1) (terminal pin USB1-1))
+    (type protect)
+   )
+   )
+   (Net #00056 
+   (rule
+   )
+   (wire (path BOT 88900  -5422000 5256000 -5422000 6218000)
+    (connect (terminal pin Q1-1) (terminal pin R3-0))
+    (type protect)
+   )
+   )
+   (Net GND 
+   (rule
+   )
+   (wire (path BOT 88900  -8200000 7035400 -7641254 7035400 -7641254 7300142)
+    (connect (terminal pin ATS1-15) (terminal wire))
+   )
+   (wire (path BOT 88900  -9260000 7028000 -9260000 7035400 -8200000 7035400)
+    (connect (terminal pin 8051-15) (terminal pin ATS1-15))
+   )
+   (wire (path BOT 88900  -7641254 7300142 -7641254 9991253 -9450001 11800000
+     -10549500 11800000 -10943500 11406000)
+    (connect (terminal wire) (terminal pin USB1-7))
+    (type protect)
+   )
+   (wire (path BOT 88900  -6268000 7021000 -6268000 7160602 -6407540 7300142
+     -7641254 7300142)
+    (connect (terminal pin C1-0) (terminal wire))
+    (type protect)
+   )
+   (wire (path BOT 88900  -6268000 5370000 -6154000 5256000 -5612500 5256000)
+    (connect (terminal pin D1-1) (terminal pin Q1-0))
+    (type protect)
+   )
+   (wire (path BOT 88900  -6268000 7021000 -6268000 6259000)
+    (connect (terminal pin C1-0) (terminal pin C2-0))
+    (type protect)
+   )
+   (wire (path BOT 88900  -6268000 6259000 -6268000 5560500)
+    (connect (terminal pin C2-0) (terminal wire))
+    (type protect)
+   )
+   (wire (path BOT 88900  -6268000 5560500 -6268000 5370000)
+    (connect (terminal wire) (terminal pin D1-1))
+    (type protect)
+   )
+   )
+   (Net VCC/VDD 
+   (rule
+   )
+   (wire (path BOT 88900  -13324000 7028000 -13652500 7028000 -13652500 4749399
+     -12010000 4749399)
+    (connect (terminal pin RN1-1) (terminal pin ATS1-37))
+   )
+   (wire (path BOT 88900  -11038000 4742000 -11055673 4721417 -11083656 4749400
+     -12010000 4749400)
+    (connect (terminal pin 8051-37) (terminal pin ATS1-37))
+    (type protect)
+   )
+   (wire (path BOT 88900  -10784000 4750000 -10650000 4616000 -10650000 4100001
+     -9449999 2900000 -7478000 2900000 -7194000 3184000)
+    (connect (terminal wire) (terminal pin R4-0))
+    (type protect)
+   )
+   (wire (path BOT 88900  -12928263 7028000 -12928263 8271737 -12350000 8850000
+     -11721500 8850000 -10943500 9628000)
+    (connect (terminal wire) (terminal pin USB1-0))
+    (type protect)
+   )
+   (wire (path BOT 88900  -11038000 4742000 -10792000 4742000 -10784000 4750000)
+    (connect (terminal pin 8051-37) (terminal wire))
+    (type protect)
+   )
+   (wire (path BOT 88900  -13324000 7028000 -12928263 7028000)
+    (connect (terminal pin RN1-1) (terminal wire))
+    (type protect)
+   )
+   (wire (path BOT 88900  -7194000 3184000 -7184000 3184000 -6522000 3846000)
+    (connect (terminal pin R4-0) (terminal pin R1-0))
+    (type protect)
+   )
+   (wire (path BOT 88900  -6522000 3846000 -6516300 3840300 -5653200 3840300)
+    (connect (terminal pin R1-0) (terminal pin SW1-0))
+    (type protect)
+   )
+   )
+  )
+ )
