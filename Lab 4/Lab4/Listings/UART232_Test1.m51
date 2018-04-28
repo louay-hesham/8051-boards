@@ -1,0 +1,178 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/21/2018  14:39:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main_2.obj TO .\Objects\UART232_Test1 PRINT (.\Listings\UART232_Test1.m51) RAMSIZE
+>>  (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main_2.obj (MAIN_2)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\UART232_Test1 (MAIN_2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0036H     UNIT         ?PR?MAIN?MAIN_2
+            CODE    0836H     0025H     UNIT         ?PR?_PRINTSTRING?MAIN_2
+            CODE    085BH     0025H     UNIT         ?PR?_TOASCII?MAIN_2
+            CODE    0880H     0019H     UNIT         ?C?LIB_CODE
+            CODE    0899H     0018H     UNIT         ?CO?MAIN_2
+            CODE    08B1H     0010H     UNIT         ?PR?SETUPSERIAL?MAIN_2
+            CODE    08C1H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08CDH     0008H     UNIT         ?PR?___PUTCHAR?MAIN_2
+            CODE    08D5H     0008H     UNIT         ?PR?__GETCHAR?MAIN_2
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\UART232_Test1 (MAIN_2)
+
+
+SEGMENT                           DATA_GROUP 
+  +--> CALLED SEGMENT           START    LENGTH
+-----------------------------------------------
+?C_C51STARTUP                   -----    -----
+  +--> ?PR?MAIN?MAIN_2
+
+?PR?MAIN?MAIN_2                 -----    -----
+  +--> ?PR?SETUPSERIAL?MAIN_2
+  +--> ?CO?MAIN_2
+  +--> ?PR?_PRINTSTRING?MAIN_2
+  +--> ?PR?__GETCHAR?MAIN_2
+  +--> ?PR?_TOASCII?MAIN_2
+  +--> ?PR?___PUTCHAR?MAIN_2
+
+?PR?_PRINTSTRING?MAIN_2         0008H    0003H
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/21/2018  14:39:01  PAGE 2
+
+
+  +--> ?PR?___PUTCHAR?MAIN_2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\UART232_Test1 (MAIN_2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN_2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:08D5H         PUBLIC        __getchar
+  C:0800H         PUBLIC        main
+  C:0836H         PUBLIC        _printString
+  C:085BH         PUBLIC        _ToASCII
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:08CDH         PUBLIC        ___putchar
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  C:08B1H         PUBLIC        SetupSerial
+  -------         PROC          SETUPSERIAL
+  C:08B1H         LINE#         3
+  C:08B1H         LINE#         4
+  C:08B1H         LINE#         10
+  C:08B4H         LINE#         11
+  C:08B7H         LINE#         14
+  C:08BAH         LINE#         15
+  C:08BCH         LINE#         16
+  C:08BEH         LINE#         17
+  C:08C0H         LINE#         18
+  -------         ENDPROC       SETUPSERIAL
+  -------         PROC          ___PUTCHAR
+  D:0007H         SYMBOL        ch
+  C:08CDH         LINE#         20
+  C:08CDH         LINE#         21
+  C:08CDH         LINE#         22
+  C:08CFH         LINE#         23
+  C:08D2H         LINE#         24
+  C:08D4H         LINE#         25
+  -------         ENDPROC       ___PUTCHAR
+  -------         PROC          __GETCHAR
+  -------         DO            
+  D:0007H         SYMBOL        ch
+  -------         ENDDO         
+  C:08D5H         LINE#         27
+  C:08D5H         LINE#         28
+  C:08D5H         LINE#         30
+  C:08D8H         LINE#         31
+  C:08DAH         LINE#         32
+  C:08DCH         LINE#         33
+  C:08DCH         LINE#         34
+  -------         ENDPROC       __GETCHAR
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/21/2018  14:39:01  PAGE 3
+
+
+  -------         PROC          _PRINTSTRING
+  D:0008H         SYMBOL        s
+  C:0836H         LINE#         36
+  C:083CH         LINE#         37
+  C:083CH         LINE#         38
+  C:0847H         LINE#         39
+  C:085AH         LINE#         40
+  -------         ENDPROC       _PRINTSTRING
+  -------         PROC          _TOASCII
+  D:0007H         SYMBOL        val
+  C:085BH         LINE#         42
+  C:085BH         LINE#         43
+  C:085BH         LINE#         44
+  C:0867H         LINE#         45
+  C:086CH         LINE#         46
+  C:0878H         LINE#         47
+  C:087DH         LINE#         49
+  C:087FH         LINE#         50
+  -------         ENDPROC       _TOASCII
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        key
+  D:0005H         SYMBOL        half_port
+  -------         ENDDO         
+  C:0800H         LINE#         52
+  C:0800H         LINE#         53
+  C:0800H         LINE#         54
+  C:0802H         LINE#         58
+  C:0805H         LINE#         63
+  C:080EH         LINE#         65
+  C:0811H         LINE#         67
+  C:0811H         LINE#         68
+  C:0811H         LINE#         69
+  C:0816H         LINE#         71
+  C:081FH         LINE#         72
+  C:081FH         LINE#         73
+  C:081FH         LINE#         74
+  C:081FH         LINE#         75
+  C:0824H         LINE#         76
+  C:082BH         LINE#         77
+  C:0834H         LINE#         78
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN_2
+
+  -------         MODULE        ?C?CLDPTR
+  C:0880H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00B8H BYTE ( 8%) *
+******************************************************************************
+
+Program Size: data=12.0 xdata=0 code=224
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

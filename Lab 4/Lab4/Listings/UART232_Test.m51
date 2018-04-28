@@ -1,0 +1,208 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/20/2018  06:36:12  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\UART232_Test PRINT (.\Listings\UART232_Test.m51) RAMSIZE (25
+>> 6)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (PUTCHAR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (GETCHAR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (_GETKEY)
+
+
+LINK MAP OF MODULE:  .\Objects\UART232_Test (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0016H     UNIT         _DATA_GROUP_
+            DATA    001EH     0001H     UNIT         ?DT?GETCHAR
+                    001FH     0001H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+            BIT     0021H.1   0000H.1   UNIT         ?BI?GETCHAR
+                    0021H.2   0000H.6                *** GAP ***
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0B5CH     008EH     UNIT         ?C?LIB_CODE
+            CODE    0BEAH     0044H     UNIT         ?PR?MAIN?MAIN
+            CODE    0C2EH     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    0C55H     0025H     UNIT         ?PR?_TOASCII?MAIN
+            CODE    0C7AH     0016H     UNIT         ?CO?MAIN
+            CODE    0C90H     0011H     UNIT         ?PR?GETCHAR?GETCHAR
+            CODE    0CA1H     000EH     UNIT         ?PR?SETUPSERIAL?MAIN
+            CODE    0CAFH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0CBBH     000AH     UNIT         ?PR?_GETKEY?_GETKEY
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\UART232_Test (MAIN)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/20/2018  06:36:12  PAGE 2
+
+
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  -----    -----      0008H    0002H
+  +--> ?PR?SETUPSERIAL?MAIN
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+  +--> ?PR?GETCHAR?GETCHAR
+  +--> ?PR?_TOASCII?MAIN
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    000AH    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?GETCHAR?GETCHAR            -----    -----      -----    -----
+  +--> ?PR?_GETKEY?_GETKEY
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\UART232_Test (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  B:0098H.1       PUBLIC        TI
+  C:0BEAH         PUBLIC        main
+  C:0C55H         PUBLIC        _ToASCII
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  C:0CA1H         PUBLIC        SetupSerial
+  -------         PROC          SETUPSERIAL
+  C:0CA1H         LINE#         4
+  C:0CA1H         LINE#         5
+  C:0CA1H         LINE#         11
+  C:0CA4H         LINE#         12
+  C:0CA7H         LINE#         15
+  C:0CAAH         LINE#         16
+  C:0CACH         LINE#         17
+  C:0CAEH         LINE#         18
+  -------         ENDPROC       SETUPSERIAL
+  -------         PROC          _TOASCII
+  D:0007H         SYMBOL        val
+  C:0C55H         LINE#         20
+  C:0C55H         LINE#         21
+  C:0C55H         LINE#         22
+  C:0C61H         LINE#         23
+  C:0C66H         LINE#         24
+  C:0C72H         LINE#         25
+  C:0C77H         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/20/2018  06:36:12  PAGE 3
+
+
+  C:0C79H         LINE#         28
+  -------         ENDPROC       _TOASCII
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        key
+  D:0009H         SYMBOL        half_port
+  -------         ENDDO         
+  C:0BEAH         LINE#         30
+  C:0BEAH         LINE#         31
+  C:0BEAH         LINE#         32
+  C:0BEDH         LINE#         36
+  C:0BF0H         LINE#         41
+  C:0BF9H         LINE#         42
+  C:0BFCH         LINE#         44
+  C:0BFCH         LINE#         45
+  C:0BFCH         LINE#         46
+  C:0C01H         LINE#         48
+  C:0C12H         LINE#         49
+  C:0C12H         LINE#         50
+  C:0C12H         LINE#         51
+  C:0C12H         LINE#         52
+  C:0C18H         LINE#         53
+  C:0C1AH         LINE#         55
+  C:0C1AH         LINE#         56
+  C:0C1AH         LINE#         57
+  C:0C22H         LINE#         58
+  C:0C2CH         LINE#         59
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        PUTCHAR
+  C:0C2EH         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+  -------         MODULE        PRINTF
+  D:000AH         PUBLIC        ?_PRINTF517?BYTE
+  D:000AH         PUBLIC        ?_PRINTF?BYTE
+  D:000AH         PUBLIC        ?_SPRINTF517?BYTE
+  D:000AH         PUBLIC        ?_SPRINTF?BYTE
+  C:0862H         PUBLIC        _PRINTF
+  C:0862H         PUBLIC        _PRINTF517
+  C:085CH         PUBLIC        _SPRINTF
+  C:085CH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        GETCHAR
+  B:0021H.1       PUBLIC        ?C?CHARLOADED
+  D:001EH         PUBLIC        ?_UNGETCHAR?BYTE
+  C:0C90H         PUBLIC        GETCHAR
+  -------         ENDMOD        GETCHAR
+
+  -------         MODULE        ?C?CLDPTR
+  C:0B5CH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0B75H         PUBLIC        ?C?CLDOPTR
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/20/2018  06:36:12  PAGE 4
+
+
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0BA2H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0BB4H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:0BC4H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        _GETKEY
+  C:0CBBH         PUBLIC        _GETKEY
+  -------         ENDMOD        _GETKEY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 008DH BYTE ( 6%) *
+******************************************************************************
+
+Program Size: data=33.2 xdata=0 code=1224
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
